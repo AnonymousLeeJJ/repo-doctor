@@ -16,6 +16,7 @@ REQUIRED_FILES = [
     "LICENSE",
     "checks.json",
     "docs/index.html",
+    "docs/checks.json",
     "docs/styles.css",
     "docs/app.js",
     "docs/assets/preview.svg",
@@ -36,6 +37,13 @@ def main():
         model = json.loads((ROOT / "checks.json").read_text(encoding="utf-8"))
     except Exception as exc:
         return fail([f"invalid checks.json: {exc}"])
+
+    try:
+        published_model = json.loads((ROOT / "docs/checks.json").read_text(encoding="utf-8"))
+        if published_model != model:
+            errors.append("docs/checks.json is out of sync with checks.json")
+    except Exception as exc:
+        errors.append(f"invalid docs/checks.json: {exc}")
 
     categories = {item["id"] for item in model.get("categories", [])}
     ids = set()
