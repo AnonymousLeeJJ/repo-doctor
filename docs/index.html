@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Repo Doctor - GitHub 仓库体检工具</title>
+  <meta name="description" content="输入 GitHub 仓库地址，检查 README、许可证、Topics、社区配置和维护状态，生成 100 分制开源项目体检报告。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">🩺 Open Source Health Check</div>
+      <h1>Repo Doctor<br><span>让你的 GitHub 项目更值得 Star</span></h1>
+      <p class="sub">输入仓库地址，检查 README、许可证、Topics、社区配置、维护状态和传播能力，生成 100 分制体检报告。</p>
+
+      <form id="repoForm" class="search-card">
+        <label for="repoInput">GitHub 仓库地址</label>
+        <div class="input-row">
+          <input id="repoInput" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="https://github.com/owner/repo 或 owner/repo">
+          <button type="submit">开始体检</button>
+        </div>
+        <p class="hint">使用 GitHub 公共 API，无需登录。未认证请求额度由访问者 IP 共享。</p>
+      </form>
+
+      <div class="examples" aria-label="示例仓库">
+        <span>试试：</span>
+        <button type="button" data-example="AnonymousLeeJJ/shuling-skill">书灵</button>
+        <button type="button" data-example="AnonymousLeeJJ/awesome-agent-skills-zh">Skills 导航</button>
+        <button type="button" data-example="anthropics/skills">Anthropic Skills</button>
+      </div>
+    </section>
+
+    <section id="status" class="status" hidden></section>
+
+    <section id="report" class="report" hidden>
+      <div class="report-head">
+        <div class="repo-card">
+          <img id="avatar" alt="" class="avatar">
+          <div>
+            <p class="label">体检仓库</p>
+            <h2 id="repoName"></h2>
+            <p id="repoDesc" class="repo-desc"></p>
+            <div id="repoFacts" class="facts"></div>
+          </div>
+        </div>
+        <div class="score-card">
+          <div class="score-ring" id="scoreRing">
+            <span id="scoreNumber">0</span>
+            <small>/ 100</small>
+          </div>
+          <strong id="scoreLevel"></strong>
+          <p id="scoreSummary"></p>
+        </div>
+      </div>
+
+      <div class="share-panel">
+        <div>
+          <h3>分享体检结果</h3>
+          <p>把徽章或报告链接放进 README、Issue 或推广帖。</p>
+        </div>
+        <div class="share-actions">
+          <button id="copyBadge" type="button">复制 Markdown 徽章</button>
+          <button id="copyReport" type="button">复制报告链接</button>
+        </div>
+      </div>
+
+      <section class="category-summary">
+        <h3>分类得分</h3>
+        <div id="categoryBars" class="category-bars"></div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h3>检查明细</h3>
+          <span id="passSummary"></span>
+        </div>
+        <div id="checkList" class="check-list"></div>
+      </section>
+
+      <section class="next-steps">
+        <h3>优先修复建议</h3>
+        <ol id="fixList"></ol>
+      </section>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <p>Made by <a href="https://github.com/AnonymousLeeJJ">AnonymousLeeJJ</a> · 检查模型开源，欢迎改进</p>
+    <p><a href="https://github.com/AnonymousLeeJJ/repo-doctor">GitHub 仓库</a> · <a href="https://github.com/AnonymousLeeJJ/repo-doctor/issues/new?template=feedback.yml">反馈建议</a></p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

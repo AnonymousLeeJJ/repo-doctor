@@ -1,0 +1,35 @@
+name: 问题反馈 / Feedback
+description: 报告误判、页面异常或建议改进 Repo Doctor
+title: "[反馈] "
+labels: ["feedback"]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: 检查的仓库
+      placeholder: owner/repo
+  - type: dropdown
+    id: type
+    attributes:
+      label: 反馈类型
+      options:
+        - 检查项误判
+        - 页面功能异常
+        - API 请求失败
+        - 新检查项建议
+        - 界面改进
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 详细说明
+      placeholder: 请描述现象、预期结果和建议
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: 浏览器 / 环境
+      placeholder: 例如 Chrome 130 / Windows 11

@@ -1,0 +1,149 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-10-28",
+  "maxScore": 100,
+  "categories": [
+    { "id": "presentation", "name": "基础呈现", "icon": "🎯", "description": "访客 30 秒内能否看懂项目价值并快速上手" },
+    { "id": "trust", "name": "信任维护", "icon": "🛡️", "description": "项目是否可信、活跃、可持续维护" },
+    { "id": "community", "name": "社区协作", "icon": "🤝", "description": "外部开发者是否容易参与贡献" },
+    { "id": "reach", "name": "传播覆盖", "icon": "📣", "description": "项目是否容易被搜索、理解和分享" }
+  ],
+  "checks": [
+    {
+      "id": "readme-quality",
+      "category": "presentation",
+      "title": "README 存在且内容充分",
+      "weight": 10,
+      "severity": "critical",
+      "why": "README 是开源项目的第一落地页，过短或缺失会显著降低信任与转化。"
+    },
+    {
+      "id": "quickstart",
+      "category": "presentation",
+      "title": "包含安装、快速开始或使用说明",
+      "weight": 8,
+      "severity": "critical",
+      "why": "用户需要知道如何运行或安装，否则会直接离开。"
+    },
+    {
+      "id": "visual-demo",
+      "category": "presentation",
+      "title": "提供截图、演示链接或视觉示例",
+      "weight": 7,
+      "severity": "high",
+      "why": "视觉证据能让访客快速理解项目，而不是先读完整段文字。"
+    },
+    {
+      "id": "repo-metadata",
+      "category": "presentation",
+      "title": "GitHub 描述和主页字段完整",
+      "weight": 6,
+      "severity": "medium",
+      "why": "仓库描述和主页会出现在搜索结果、社交分享与仓库顶部。"
+    },
+    {
+      "id": "readme-badges",
+      "category": "presentation",
+      "title": "README 使用状态徽章",
+      "weight": 4,
+      "severity": "low",
+      "why": "许可证、版本、构建状态等徽章可以快速传递专业度。"
+    },
+    {
+      "id": "license",
+      "category": "trust",
+      "title": "包含明确许可证",
+      "weight": 8,
+      "severity": "critical",
+      "why": "没有许可证意味着默认保留所有权利，企业和贡献者通常不敢使用。"
+    },
+    {
+      "id": "recent-activity",
+      "category": "trust",
+      "title": "最近 180 天有代码更新",
+      "weight": 7,
+      "severity": "high",
+      "why": "活跃维护记录会影响用户是否愿意依赖、贡献或 Star。"
+    },
+    {
+      "id": "release-history",
+      "category": "trust",
+      "title": "有 Release 或 CHANGELOG",
+      "weight": 6,
+      "severity": "medium",
+      "why": "版本记录让用户知道项目如何演进、何时发生变化。"
+    },
+    {
+      "id": "security-policy",
+      "category": "trust",
+      "title": "包含安全披露政策",
+      "weight": 5,
+      "severity": "medium",
+      "why": "安全政策告诉研究者如何负责任地报告漏洞。"
+    },
+    {
+      "id": "topics",
+      "category": "trust",
+      "title": "至少设置 3 个 GitHub Topics",
+      "weight": 6,
+      "severity": "medium",
+      "why": "Topics 影响 GitHub 搜索、推荐和主题页面曝光。"
+    },
+    {
+      "id": "contributing",
+      "category": "community",
+      "title": "包含贡献指南",
+      "weight": 7,
+      "severity": "high",
+      "why": "贡献指南降低首次 PR 的心理成本，也能减少重复沟通。"
+    },
+    {
+      "id": "issue-templates",
+      "category": "community",
+      "title": "配置 Issue 模板",
+      "weight": 5,
+      "severity": "medium",
+      "why": "模板可以引导用户提交可复现、可处理的反馈。"
+    },
+    {
+      "id": "pr-template",
+      "category": "community",
+      "title": "配置 Pull Request 模板",
+      "weight": 4,
+      "severity": "low",
+      "why": "PR 模板能让贡献者主动说明变更、测试和风险。"
+    },
+    {
+      "id": "code-of-conduct",
+      "category": "community",
+      "title": "包含行为准则",
+      "weight": 5,
+      "severity": "low",
+      "why": "行为准则为社区协作设定边界，尤其适合公共项目。"
+    },
+    {
+      "id": "funding",
+      "category": "community",
+      "title": "配置赞助或支持入口",
+      "weight": 2,
+      "severity": "low",
+      "why": "FUNDING.yml 可以为长期维护提供明确支持路径。"
+    },
+    {
+      "id": "bilingual-docs",
+      "category": "reach",
+      "title": "README 具备英文或双语说明",
+      "weight": 5,
+      "severity": "medium",
+      "why": "英文说明能显著扩大国际开发者的理解和传播范围。"
+    },
+    {
+      "id": "share-ready-description",
+      "category": "reach",
+      "title": "描述适合搜索和社交分享",
+      "weight": 5,
+      "severity": "medium",
+      "why": "清晰、长度适中的描述更容易出现在搜索结果和转发卡片中。"
+    }
+  ]
+}
